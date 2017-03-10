@@ -1,5 +1,8 @@
+body{
+    background-color: darkgray;
+}
 h1{
-    background-color: teal;
+    background: linear-gradient(gray, teal);
     text-align: center;
     color: white;
     height: 3em;
@@ -8,15 +11,20 @@ h1{
 #displayBox{
     background-color: lightgray;
     border: 0.3em;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
     border-style: solid;
-    border-color: gray;
+    border-color: silver;
+    margin: 3em;
 }
 #displayHeader{
     background-color: slategray;
     margin: auto;
 }
+form{
+    text-align: center;
+}
 label, select{
+    font-family: arial;
     margin: auto;
     display: inline-block;
     vertical-align: middle;
@@ -36,10 +44,12 @@ label, select{
 }
 #pyramid{
     margin: center;
+    padding: 2em;
 }
 #pyramid > p{
-    margin: 0 50%;
+    margin: 10px 50%;
     text-align: right;
     font-family: monospace;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    line-height: 0.5em;
 }
