@@ -1,0 +1,45 @@
+h1{
+    background-color: teal;
+    text-align: center;
+    color: white;
+    height: 3em;
+    line-height: 3em;
+}
+#displayBox{
+    background-color: lightgray;
+    border: 0.3em;
+    border-radius: 0.5em;
+    border-style: solid;
+    border-color: gray;
+}
+#displayHeader{
+    background-color: slategray;
+    margin: auto;
+}
+label, select{
+    margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+#material{
+}
+#height{
+    margin: auto;
+    vertical-align: middle;
+}
+#heightNumber {
+    display: inline;
+}
+#displayDisplay{
+    background-color: soft;
+    margin: auto;
+}
+#pyramid{
+    margin: center;
+}
+#pyramid > p{
+    margin: 0 50%;
+    text-align: right;
+    font-family: monospace;
+    font-size: 1.5em;
+}
