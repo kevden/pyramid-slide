@@ -53,3 +53,25 @@ label, select{
     font-size: 1.2em;
     line-height: 0.5em;
 }
+#leftRight{
+    display: none;
+}
+.triangleflip{
+    display: inline;
+}
+#lRLabel{
+    cursor: pointer;
+    position: relative;
+}
+#leftRight:not(:checked) + #lRLabel{
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid black;
+    border-right: 50px solid transparent;
+}
+#leftRight:checked + #lRLabel{
+     width: 0;
+    height: 0;
+    border-bottom: 50px solid black;
+    border-left: 50px solid transparent;
+}

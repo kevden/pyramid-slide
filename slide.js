@@ -15,6 +15,7 @@ function getMaterials(select) {
 
 var materialElement = document.getElementById("material");
 var heightElement = document.getElementById("height");
+var switchElement = document.getElementById("leftRight");
 
 materialElement.addEventListener("change", function(){
     material = getMaterials(materialElement);
@@ -27,6 +28,10 @@ heightElement.addEventListener("input", function(){
     height = heightElement.value;
     drawPyramid(material, height);
     document.getElementById("heightNumber").innerHTML = heightElement.value;
+})
+
+switchElement.addEventListener("change", function(){
+    drawPyramid(getMaterials(materialElement), heightElement.value);
 })
 
 function drawPyramid(material, height) {
@@ -45,14 +50,22 @@ function drawPyramid(material, height) {
 
         // build up a string for this row
         var rowStr = "";
-        for (var i = 0; i < numSpaces; i++) {
-            var spaceChar = "&nbsp"; // this is the HTML encoding for a space " "
-            rowStr += spaceChar;
+        if (switchElement.checked){
+            for (var i = 0; i < numSpaces; i++) {
+                var spaceChar = "&nbsp"; // this is the HTML encoding for a space " "
+                rowStr += spaceChar;
+            }
         }
         for (var i = 0; i < numBricks; i++) {
             rowStr += material[materialChar];
             materialArrayIx ++;
             materialChar = materialArrayIx % material.length;
+        }
+        if (switchElement.checked){
+            for (var i = 0; i < numSpaces; i++) {
+                var spaceChar = "&nbsp"; // this is the HTML encoding for a space " "
+                rowStr += spaceChar;
+            }
         }
 
         // make a <p> element for this row, and insert it into the #pyramid container
