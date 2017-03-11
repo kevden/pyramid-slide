@@ -16,6 +16,7 @@ function getMaterials(select) {
 var materialElement = document.getElementById("material");
 var heightElement = document.getElementById("height");
 var switchElement = document.getElementById("leftRight");
+var heightLabel = document.getElementById("heightNumber");
 
 materialElement.addEventListener("change", function(){
     material = getMaterials(materialElement);
@@ -40,6 +41,8 @@ function drawPyramid(material, height) {
     document.getElementById("pyramid").innerHTML = "";
     var materialArrayIx = 0;
     var materialChar = materialArrayIx;
+    heightLabel.innerText = heightElement.value;
+
 
     // for each row....
     for (var row = 0; row < height; row++) {
@@ -61,17 +64,10 @@ function drawPyramid(material, height) {
             materialArrayIx ++;
             materialChar = materialArrayIx % material.length;
         }
-        if (switchElement.checked){
-            for (var i = 0; i < numSpaces; i++) {
-                var spaceChar = "&nbsp"; // this is the HTML encoding for a space " "
-                rowStr += spaceChar;
-            }
-        }
-
         // make a <p> element for this row, and insert it into the #pyramid container
         rowElem = document.createElement("p");
         rowElem.innerHTML = rowStr;
         document.getElementById("pyramid").appendChild(rowElem);
     }
 }
-drawPyramid(['#'], 8);
+drawPyramid(getMaterials(materialElement), heightElement.value);
